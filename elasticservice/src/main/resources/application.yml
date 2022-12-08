@@ -1,0 +1,26 @@
+server:
+  port: 8093
+
+
+coreservice:
+  global-data-dirrectory: "D:\\dimka\\Desktop\\java\\personal\\projects\\ETLServices\\coreservice\\src\\main\\resources\\"
+  add-data-path: "vk\\adddata.xlsx"
+  mq:
+    # очереди создаются автоматически на старте (если имеются права доступа)
+    routingkey: coreservice-routing
+    exchange: coreservice-exchange
+    queue: coreservice-queue
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
