@@ -1,0 +1,41 @@
+version: '3.9'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - rabbitmq
+  elastic:
+    image: elasticsearch:7.6.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - es_data:/usr/share/elasticsearch2/data
+    ports:
+      - "9200:9200"
+    networks:
+      - elastic
+  kibana:
+    image: kibana:7.6.2
+    ports:
+      - target: 5601
+        published: 5601
+    depends_on:
+      - elastic
+    networks:
+      - elastic
+
+volumes:
+  es_data:
+    driver: local
+
+
+networks:
+  elastic:
+    driver: bridge
+  rabbitmq:
+    driver: bridge

@@ -1,0 +1,3 @@
+# Project exclude paths
+/coreservice/target/
+/elasticservice/target/
