@@ -3,6 +3,7 @@ package com.github.dimka9910.etlservices.elasticservice.service;
 import com.github.dimka9910.etlservices.elasticservice.dto.AdditionalDataDto;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.lucene.spatial3d.geom.GeoShape;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.springframework.beans.factory.annotation.Value;
@@ -59,8 +60,6 @@ public class AdditionalDataService {
                 additionalDataDto.setName(cellIterator.next().getStringCellValue());
                 additionalDataDto.setSurname(cellIterator.next().getStringCellValue());
                 additionalDataDto.setCity(cellIterator.next().getStringCellValue());
-                additionalDataDto.setLatitude(Double.parseDouble(cellIterator.next().getStringCellValue()));
-                additionalDataDto.setLongitude(Double.parseDouble(cellIterator.next().getStringCellValue()));
 
                 additionalDataDtoMap.put(additionalDataDto.getVkId(), additionalDataDto);
             }
