@@ -26,7 +26,6 @@ public class NotificationEventListener {
 
     private final ElasticService elasticService;
 
-
     @RabbitListener(containerFactory = "rabbitListenerContainerFactory",
             bindings = @QueueBinding(value = @Queue(name = "${coreservice.mq.queue}"),
                     key = "${coreservice.mq.routingkey}",

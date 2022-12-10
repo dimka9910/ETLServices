@@ -17,8 +17,6 @@ import java.util.Date;
 @NoArgsConstructor
 @Document(indexName = "message")
 public class MessageIndex {
-
-
     @Id
     public String id;
     Integer dialogId;

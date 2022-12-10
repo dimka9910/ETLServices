@@ -16,7 +16,6 @@ public class AppRest {
     @Autowired
     LoadAndPushDataService loadAndPushDataService;
 
-
     @GetMapping (value = "/loaddata", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.ALL_VALUE)
     public String readAndWriteFiles() {
         loadAndPushDataService.loadAndPushInRabbit();

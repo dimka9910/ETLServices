@@ -4,7 +4,7 @@ server:
 
 coreservice:
   # ЭТО НАДО ПОМЕНЯТЬ
-  global-data-dirrectory: "D:/dimka/Desktop/java/personal/projects/ETLServices/coreservice/src/main/resources/"
+  global-data-dirrectory: "/Users/ypylaev/Documents/Pets/ETLServices/coreservice/src/main/resources/"
   folder-path: "vk/messages"
   mq:
     routingkey: coreservice-routing

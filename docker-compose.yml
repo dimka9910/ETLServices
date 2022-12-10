@@ -1,6 +1,8 @@
 version: '3.9'
 services:
+
   rabbitmq:
+    platform: linux/x86_64
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'
     ports:
@@ -8,7 +10,9 @@ services:
       - 15672:15672
     networks:
       - rabbitmq
+
   elastic:
+    platform: linux/x86_64
     image: elasticsearch:7.6.2
     environment:
       - discovery.type=single-node
@@ -19,8 +23,12 @@ services:
       - "9200:9200"
     networks:
       - elastic
+
   kibana:
+    platform: linux/x86_64
     image: kibana:7.6.2
+    environment:
+      - ELASTICSEARCH_HOSTS=["http://elastic:9200"]
     ports:
       - target: 5601
         published: 5601
@@ -34,7 +42,6 @@ services:
 volumes:
   es_data:
     driver: local
-
 
 networks:
   elastic:

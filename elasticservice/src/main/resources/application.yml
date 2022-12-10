@@ -3,8 +3,8 @@ server:
 
 
 coreservice:
-  global-data-dirrectory: "D:\\dimka\\Desktop\\java\\personal\\projects\\ETLServices\\coreservice\\src\\main\\resources\\"
-  add-data-path: "vk\\adddata.xlsx"
+  global-data-dirrectory: "/Users/ypylaev/Documents/Pets/ETLServices/coreservice/src/main/resources/"
+  add-data-path: "vk/adddata.xlsx"
   mq:
     # очереди создаются автоматически на старте (если имеются права доступа)
     routingkey: coreservice-routing
