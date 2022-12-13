@@ -76,7 +76,7 @@
                         <manifest>
 
                             <!-- give full qualified name of your main class-->
-                            <mainClass>com.github.dimka9910.etlservices.coreservice.app.Application</mainClass>
+                            <mainClass>com.github.dimka9910.etlservices.coreservice.extraction.module.app.Application</mainClass>
 
                         </manifest>
                     </archive>
