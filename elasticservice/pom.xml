@@ -102,7 +102,7 @@
                         <manifest>
 
                             <!-- give full qualified name of your main class-->
-                            <mainClass>com.github.dimka9910.etlservices.elasticservice.app.Application</mainClass>
+                            <mainClass>com.github.dimka9910.etlservices.elasticservice.tranformer.module.app.Application</mainClass>
 
                         </manifest>
                     </archive>
